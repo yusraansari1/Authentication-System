@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Authentication System</title>
+  <link rel="stylesheet" href="css/sys.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="navbar">
+    <nav>
+      <div class="blue lighten-2 first">
+        <a class="center-align white-text darken-3 center first"><strong>AUTHENTICATION SYSTEM</strong></a>
+      </div>
+    </nav>
+  </div>
+  <div class="shade">
+  <div class="wallpaper" id="login-div">
+    <div class="container #f5f5f5 grey lighten-4">
+      <div class="row">
+        <div class="col s12">
+          <h4 class="center-align grey-text text-darken-2">Sign In</h4></u>
+        </div>
+      </div>
+      <div class="center-align">
+      <img src="images/user.jpg"> 
+      </div>
+      <br/>
+      <div class="row center-align">
+        <div class="col l12 m12 s12 center-align ">
+          <span><a href="#" class="modal-trigger blue-text darken-3"
+              data-target="modal-signup">Register</a></span>
+
+          <div class="row my-form">
+            <form class="col s12 " id="login-form">
+              <div class="row  center-align above">
+                <div class=" col s6 text-area-div1 above">
+                  <span><label for="email"><span class="big">Email:</span></label><input id="login-email"
+                      type="email" class="validate input-field" placeholder="Email" required></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s6 ">
+                  <span><label for="password"><strong><span class="big">Password:</span></strong></label><input id="login-password"
+                      type="password" class="validate input-field" id="textarea1" placeholder="Password" required></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col s7">
+                  <button class=" waves-effect waves-light btn blue">Login</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container #f5f5f5 grey lighten-4" id="welcome-div">
+    <div class="row">
+      <div class="col l12">
+        <h4 class="blue-text darken-3">Welcome! You have logged in.</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col l2 m3">
+        <button class="waves-effect waves-light btn blue" id="logout">Logout</button>
+      </div>
+    </div>
+  </div>
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h3 class="center">SIGN UP!</h3><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" placeholder="Email address" required />
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" placeholder="Choose password" required />
+        </div>
+        <button class=" waves-effect waves-light btn blue center-align"><a href="loggedin.html"></a> Sign up</button>
+      </form>
+    </div>
+  </div>
+</div>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-firestore.js"></script>
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDQPxHmCNaUzkEw0eJiIag4fvPPaQfclVA",
+      authDomain: "authentication-system-6aa1c.firebaseapp.com",
+      databaseURL: "https://authentication-system-6aa1c.firebaseio.com",
+      projectId: "authentication-system-6aa1c",
+      appId: "1:196948471728:web:00c73ab075edd016"
+    };
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="js/sys.js"></script>
+</body>
+</html>
